@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\QuoteAdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicQuoteController;
 use App\Http\Controllers\QuoteRequestController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,9 @@ Route::get('/cookies', fn () => Inertia::render('Legal/Cookies'))->name('legal.c
 Route::get('/voorwaarden', fn () => Inertia::render('Legal/Terms'))->name('legal.terms');
 
 Route::post('/offerte', [QuoteRequestController::class, 'store'])->name('quote.store');
+
+Route::get('/offerte/{hash}', [PublicQuoteController::class, 'show'])->name('public.quote.show');
+Route::get('/offerte/{hash}/pdf', [PublicQuoteController::class, 'pdf'])->name('public.quote.pdf');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -47,6 +51,23 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     // uploads
     Route::get('/offertes/{quote}/download', [QuoteAdminController::class, 'download'])->name('admin.quotes.download');
     Route::get('/offertes/{quote}/preview', [QuoteAdminController::class, 'preview'])->name('admin.quotes.preview');
+
+    Route::get('/offertes/{quote}/document', [QuoteAdminController::class, 'document'])->name('admin.quotes.document');
+    Route::put('/offertes/{quote}/document', [QuoteAdminController::class, 'documentUpdate'])->name('admin.quotes.document.update');
+
+    Route::get('/offertes/{quote}/pdf', [QuoteAdminController::class, 'pdf'])
+        ->name('admin.quotes.pdf');
+
+    // public link toggles + resend
+    Route::post('/offertes/{quote}/public-link', [QuoteAdminController::class, 'enablePublicLink'])
+        ->name('admin.quotes.public.enable');
+
+    Route::delete('/offertes/{quote}/public-link', [QuoteAdminController::class, 'disablePublicLink'])
+        ->name('admin.quotes.public.disable');
+
+    Route::post('/offertes/{quote}/send', [QuoteAdminController::class, 'sendOffer'])
+        ->name('admin.quotes.send');
+
 });
 
 require __DIR__.'/auth.php';

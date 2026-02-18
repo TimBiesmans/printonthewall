@@ -153,11 +153,11 @@
         <div class="mx-auto max-w-6xl px-4">
           <div class="flex items-end justify-between gap-4">
             <div>
-              <h2 class="text-4xl font-black text-slate-800">Portfolio</h2>
+              <h2 class="text-4xl font-black text-slate-800">Mogelijkheden</h2>
               <div class="mt-2 h-1 w-20 bg-orange-500 rounded"></div>
-              <p class="mt-5 text-slate-600 text-lg">
-                Enkele voorbeelden van wat mogelijk is. (Later vervang je dit door echte realisaties.)
-              </p>
+              <!-- <p class="mt-5 text-slate-600 text-lg">
+                Enkele voorbeelden van wat mogelijk is.
+              </p> -->
             </div>
 
             <button
@@ -214,7 +214,7 @@
               <FaqItem
                 :open="faqOpen === 4"
                 title="Hoe snel kan dit?"
-                text="Vaak binnen enkele dagen, afhankelijk van planning en voorbereiding. Geef je timing mee in de offerte wizard."
+                text="We bekijken samen wat het beste voor jou uitkomt. Geef je timing mee in de offerte wizard."
                 @toggle="toggleFaq(4)"
               />
               <div class="h-px bg-slate-200 my-4"></div>

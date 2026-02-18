@@ -1,5 +1,5 @@
 <template>
-  <AuthenticatedLayout>
+  <AuthenticatedLayout :fullWidth="true">
     <div class="mx-auto max-w-3xl px-4 py-8 space-y-6">
       <div class="flex items-start justify-between gap-4">
         <div>

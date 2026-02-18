@@ -19,7 +19,7 @@
 
         <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
           <a :href="homeHref + '#diensten'" class="hover:text-slate-900">Diensten</a>
-          <a :href="homeHref + '#portfolio'" class="hover:text-slate-900">Portfolio</a>
+          <a :href="homeHref + '#portfolio'" class="hover:text-slate-900">Mogelijkheden</a>
           <a :href="homeHref + '#faq'" class="hover:text-slate-900">FAQ</a>
           <a :href="homeHref + '#offerte'" class="hover:text-slate-900">Offerte</a>
         </nav>

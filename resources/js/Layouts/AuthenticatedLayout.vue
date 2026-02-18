@@ -7,6 +7,10 @@ import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
 
+defineProps({
+  fullWidth: { type: Boolean, default: false },
+});
+
 const showingNavigationDropdown = ref(false);
 </script>
 
@@ -17,7 +21,12 @@ const showingNavigationDropdown = ref(false);
                 class="border-b border-gray-100 bg-white"
             >
                 <!-- Primary Navigation Menu -->
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div
+                    :class="[
+                        'mx-auto px-4 sm:px-6 lg:px-8',
+                        fullWidth ? 'max-w-none' : 'max-w-7xl'
+                    ]"
+                >
                     <div class="flex h-16 justify-between">
                         <div class="flex">
                             <!-- Logo -->
@@ -188,7 +197,12 @@ const showingNavigationDropdown = ref(false);
                 class="bg-white shadow"
                 v-if="$slots.header"
             >
-                <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+                <div
+                    :class="[
+                        'mx-auto px-4 py-6 sm:px-6 lg:px-8',
+                        fullWidth ? 'max-w-none' : 'max-w-7xl'
+                    ]"
+                >
                     <slot name="header" />
                 </div>
             </header>

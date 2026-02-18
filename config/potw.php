@@ -18,7 +18,7 @@ return [
 
     'socials' => [
         'facebook' => 'https://facebook.com/printonthewallbe',
-        'instagram' => 'https://instagram.com/printontheballbe',
+        'instagram' => 'https://instagram.com/printonthewallbe',
         'linkedin' => 'https://linkedin.com/company/print-on-the-wall-be',
     ],
 
