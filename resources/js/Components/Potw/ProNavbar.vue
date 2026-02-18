@@ -43,7 +43,7 @@
           </button>
 
           <button @click="scrollTo('#portfolio')" class="hover:text-slate-900">
-            Portfolio
+            Mogelijkheden
           </button>
 
           <button @click="scrollTo('#faq')" class="hover:text-slate-900">
