@@ -14,7 +14,7 @@
     </div>
     <div class="p-4">
       <div class="text-sm font-extrabold text-slate-800">{{ title }}</div>
-      <div class="mt-1 text-xs text-slate-500">Hover zoom</div>
+      <!-- <div class="mt-1 text-xs text-slate-500">Hover zoom</div> -->
     </div>
   </div>
 </template>
