@@ -397,6 +397,7 @@
 
                   <button
                     v-else
+                    id="offerte-aanvragen"
                     type="submit"
                     class="inline-flex justify-center items-center rounded-md bg-[#c22229] px-6 py-3 text-sm font-bold text-white shadow hover:opacity-90 disabled:opacity-50"
                     :disabled="form.processing || !confirmOk"
