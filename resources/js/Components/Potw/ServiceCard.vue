@@ -1,9 +1,13 @@
 <template>
-  <div class="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
+  <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
     <div class="relative">
       <img :src="img" :alt="title" class="h-52 w-full object-cover" />
+
       <div class="absolute left-3 top-3">
-        <span class="inline-flex items-center rounded-md px-3 py-1 text-xs font-bold shadow-sm" :class="ribbonClasses">
+        <span
+          class="inline-flex items-center rounded-md px-3 py-1 text-xs font-bold text-white shadow-sm"
+          :class="ribbonClasses"
+        >
           {{ ribbon }}
         </span>
       </div>
@@ -21,13 +25,13 @@ import { computed } from "vue";
 
 const props = defineProps({
   ribbon: String,
-  ribbonColor: String, // orange | blue
+  ribbonColor: String,
   title: String,
   text: String,
   img: String,
 });
 
 const ribbonClasses = computed(() =>
-  props.ribbonColor === "blue" ? "bg-blue-700 text-white" : "bg-orange-600 text-white"
+  props.ribbonColor === "blue" ? "bg-blue-700" : "bg-orange-600"
 );
 </script>

@@ -2,7 +2,7 @@
   <PotwLegalLayout
     title="Privacybeleid"
     subtitle="Hoe we jouw gegevens verwerken bij offerte-aanvragen en contact."
-    updatedAt="[DATUM]"
+    updatedAt="01/04/2026"
     active="privacy"
   >
     <div class="prose prose-slate max-w-none">

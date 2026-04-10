@@ -1,10 +1,14 @@
 <template>
   <div>
-    <label class="block text-sm font-semibold text-slate-700">
+    <label
+      :for="inputId"
+      class="block text-sm font-semibold text-slate-700"
+    >
       {{ label }} <span v-if="required" class="text-red-600">*</span>
     </label>
 
     <input
+      :id="inputId"
       :type="type"
       :placeholder="placeholder"
       class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
@@ -17,7 +21,9 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from "vue";
+
+const props = defineProps({
   label: { type: String, required: true },
   modelValue: { type: [String, Number], default: "" },
   error: { type: String, default: "" },
@@ -27,4 +33,8 @@ defineProps({
 });
 
 defineEmits(["update:modelValue"]);
+
+const inputId = computed(() =>
+  `field-${props.label.toLowerCase().replace(/\s+/g, "-")}`
+);
 </script>

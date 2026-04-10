@@ -2,7 +2,7 @@
   <PotwLegalLayout
     title="Cookiebeleid"
     subtitle="Welke cookies we gebruiken en waarom."
-    updatedAt="[DATUM]"
+    updatedAt="01/04/2026"
     active="cookies"
   >
     <div class="prose prose-slate max-w-none">

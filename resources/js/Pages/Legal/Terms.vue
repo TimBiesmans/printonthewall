@@ -2,7 +2,7 @@
   <PotwLegalLayout
     title="Algemene voorwaarden"
     subtitle="Voor offertes, uitvoering en aansprakelijkheid."
-    updatedAt="[DATUM]"
+    updatedAt="01/04/2026"
     active="terms"
   >
     <div class="prose prose-slate max-w-none">

@@ -1,34 +1,31 @@
 <template>
   <header
-    class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200"
+    class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur"
   >
     <div class="mx-auto max-w-6xl px-4">
-      <div class="h-16 flex items-center justify-between gap-4">
-
+      <div class="flex h-16 items-center justify-between gap-4">
         <!-- LEFT BRAND -->
         <button
           type="button"
           @click="goTop"
-          class="flex items-center gap-3 min-w-0"
+          class="flex min-w-0 items-center gap-3"
         >
-          <!-- Logo -->
           <img
+            v-show="logoVisible"
             src="/images/potw/logo.png"
             alt="Print on the wall"
             class="h-9 w-auto shrink-0"
             draggable="false"
             @error="hideLogo"
-            v-show="logoVisible"
           />
 
-          <!-- Brand text -->
-          <div class="leading-tight min-w-max">
+          <div class="min-w-max leading-tight">
             <div class="text-base font-extrabold tracking-tight">
               <span class="text-orange-600">Print</span>
               <span class="text-slate-900">onthe</span>
               <span class="text-blue-700">wall</span>
             </div>
-            <div class="text-[11px] text-slate-500 -mt-0.5">
+            <div class="-mt-0.5 text-[11px] text-slate-500">
               {{ slogan }}
             </div>
           </div>
@@ -36,22 +33,22 @@
 
         <!-- DESKTOP NAV -->
         <nav
-          class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700"
+          class="hidden items-center gap-8 text-sm font-semibold text-slate-700 md:flex"
         >
           <button @click="scrollTo('#diensten')" class="hover:text-slate-900">
-            Diensten
+            Toepassingen
           </button>
 
           <button @click="scrollTo('#portfolio')" class="hover:text-slate-900">
-            Mogelijkheden
+            Realisaties
+          </button>
+
+          <button @click="scrollTo('#werkwijze')" class="hover:text-slate-900">
+            Werkwijze
           </button>
 
           <button @click="scrollTo('#faq')" class="hover:text-slate-900">
             FAQ
-          </button>
-
-          <button @click="scrollTo('#offerte')" class="hover:text-slate-900">
-            Offerte
           </button>
         </nav>
 
@@ -61,9 +58,8 @@
           @click="scrollTo('#offerte')"
           class="inline-flex items-center justify-center rounded-md bg-[#c22229] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90"
         >
-          Offerte aanvragen
+          Gratis visualisatie
         </button>
-
       </div>
     </div>
   </header>
@@ -75,26 +71,19 @@ import { usePage } from "@inertiajs/vue3";
 
 const page = usePage();
 
-/**
- * Brand slogan uit inertia props
- */
-const slogan = computed(() =>
-  page.props.brand?.slogan ??
-  page.props.potw?.brand?.slogan ??
-  "You think it, we print it"
+const slogan = computed(
+  () =>
+    page.props.brand?.slogan ??
+    page.props.potw?.brand?.slogan ??
+    "You think it, we print it."
 );
 
-/**
- * Logo fallback (voorkomt flex issues)
- */
 const logoVisible = ref(true);
+
 function hideLogo() {
   logoVisible.value = false;
 }
 
-/**
- * Smooth scroll met sticky header offset
- */
 function scrollTo(selector) {
   const el = document.querySelector(selector);
   if (!el) return;

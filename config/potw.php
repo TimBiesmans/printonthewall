@@ -13,7 +13,7 @@ return [
         'city' => '8310 Assebroek - België',
         'vat' => 'BE 0695.762.192',
         'email' => 'info@printonthewall.be',
-        'phone' => '+32 474 62 13 64',
+        'phone' => '+32 451 03 14 92',
     ],
 
     'socials' => [
