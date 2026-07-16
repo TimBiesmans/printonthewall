@@ -645,11 +645,11 @@
                 {{ $documentNumber }}
             </div>
 
-            @if(!empty($doc->quote_request_id))
+            {{-- @if(!empty($doc->quote_request_id))
                 <div class="document-request">
                     Aanvraag #{{ $doc->quote_request_id }}
                 </div>
-            @endif
+            @endif --}}
 
             <table class="document-dates">
                 <tr>
@@ -734,103 +734,74 @@
             </div>
 
             <div class="party-name">
-                {{ $companyName }}
+                Print On The Wall
             </div>
 
-            @if(!empty($companyAddress))
-                <div class="party-line">
-                    {!! nl2br(e($companyAddress)) !!}
-                </div>
-            @endif
+            <div class="party-line">
+                Kathelijne Idestraat 34
+            </div>
 
-            @if(!empty($companyPostalCode) || !empty($companyCity))
-                <div class="party-line">
-                    {{ trim(($companyPostalCode ?? '') . ' ' . ($companyCity ?? '')) }}
-                </div>
-            @endif
+            <div class="party-line">
+                8310 Assebroek
+            </div>
 
-            @if(
-                !empty($companyVat)
-                || !empty($companyRegistration)
-                || !empty($companyEmail)
-                || !empty($companyPhone)
-                || !empty($companyIban)
-                || !empty($companyWebsite)
-            )
-                <table class="contact-table">
-                    @if(!empty($companyVat))
-                        <tr>
-                            <td class="contact-label">
-                                BTW
-                            </td>
+            <table class="contact-table">
+                  <tr>
+                      <td class="contact-label">
+                          BTW
+                      </td>
 
-                            <td class="contact-value">
-                                {{ $companyVat }}
-                            </td>
-                        </tr>
-                    @endif
+                      <td class="contact-value">
+                          BE0695762192
+                      </td>
+                  </tr>
 
-                    @if(!empty($companyRegistration))
-                        <tr>
-                            <td class="contact-label">
-                                Onderneming
-                            </td>
+                  <tr>
+                      <td class="contact-label">
+                          E-mail
+                      </td>
 
-                            <td class="contact-value">
-                                {{ $companyRegistration }}
-                            </td>
-                        </tr>
-                    @endif
+                      <td class="contact-value">
+                          print@printonthewall.be
+                      </td>
+                  </tr>
 
-                    @if(!empty($companyEmail))
-                        <tr>
-                            <td class="contact-label">
-                                E-mail
-                            </td>
+              @if(!empty($companyPhone))
+                  <tr>
+                      <td class="contact-label">
+                          Telefoon
+                      </td>
 
-                            <td class="contact-value">
-                                {{ $companyEmail }}
-                            </td>
-                        </tr>
-                    @endif
+                      <td class="contact-value">
+                          +32 451 03 14 92
+                      </td>
+                  </tr>
+              @endif
 
-                    @if(!empty($companyPhone))
-                        <tr>
-                            <td class="contact-label">
-                                Telefoon
-                            </td>
+              @if(!empty($companyWebsite))
+                  <tr>
+                      <td class="contact-label">
+                          Website
+                      </td>
 
-                            <td class="contact-value">
-                                {{ $companyPhone }}
-                            </td>
-                        </tr>
-                    @endif
+                      <td class="contact-value">
+                          {{ $companyWebsite }}
+                      </td>
+                  </tr>
+              @endif
 
-                    @if(!empty($companyWebsite))
-                        <tr>
-                            <td class="contact-label">
-                                Website
-                            </td>
+              @if(!empty($companyIban))
+                  <tr>
+                      <td class="contact-label">
+                          IBAN
+                      </td>
 
-                            <td class="contact-value">
-                                {{ $companyWebsite }}
-                            </td>
-                        </tr>
-                    @endif
-
-                    @if(!empty($companyIban))
-                        <tr>
-                            <td class="contact-label">
-                                IBAN
-                            </td>
-
-                            <td class="contact-value">
-                                {{ $companyIban }}
-                            </td>
-                        </tr>
-                    @endif
-                </table>
-            @endif
+                      <td class="contact-value">
+                          {{ $companyIban }}
+                      </td>
+                  </tr>
+              @endif
+          </table>
         </td>
     </tr>
 </table>
