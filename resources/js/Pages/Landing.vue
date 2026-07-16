@@ -328,41 +328,72 @@
               <button
                 type="button"
                 @click="scrollTo('#offerte')"
-                class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50"
+                class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
               >
                 Vraag je voorstel aan
               </button>
             </div>
 
-            <p class="mt-5 text-slate-600">
-              Elke muur en elk ontwerp is anders. Daarom bezorgen we altijd een correcte prijs op basis van afmetingen,
-              ondergrond en ontwerp. Hieronder vind je een eerste indicatie.
+            <p class="mt-5 max-w-3xl text-slate-600">
+              Elke muur en elk ontwerp is anders. Daarom bezorgen we altijd een correcte prijs op basis van de afmetingen,
+              ondergrond, bereikbaarheid en het aangeleverde ontwerp. Hieronder vind je een eerste indicatie.
             </p>
 
             <div class="mt-6 grid gap-4 md:grid-cols-3">
               <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <div class="text-sm font-semibold text-slate-500">Kleine prints</div>
-                <div class="mt-2 text-2xl font-black text-slate-900">vanaf €199</div>
-                <p class="mt-2 text-sm text-slate-600">
-                  Ideaal voor quotes, logo’s en compacte toepassingen.
+                <div class="text-sm font-semibold text-slate-500">
+                  Kleine prints
+                </div>
+
+                <div class="mt-2 text-2xl font-black text-slate-900">
+                  vanaf €295
+                </div>
+
+                <p class="mt-2 text-sm leading-6 text-slate-600">
+                  Voor logo’s, quotes en compacte toepassingen tot ongeveer 2 m².
+                </p>
+              </div>
+
+              <div class="rounded-xl border-2 border-orange-500 bg-orange-50 p-5 shadow-sm">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="text-sm font-semibold text-orange-700">
+                    Middelgrote prints
+                  </div>
+
+                  <span class="rounded-full bg-orange-500 px-2.5 py-1 text-xs font-bold text-white">
+                    Populair
+                  </span>
+                </div>
+
+                <div class="mt-2 text-2xl font-black text-slate-900">
+                  vanaf €135/m²
+                </div>
+
+                <p class="mt-2 text-sm leading-6 text-slate-600">
+                  Voor accentmuren, bureaus, slaapkamers en professionele branding van 2 tot 5 m².
                 </p>
               </div>
 
               <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <div class="text-sm font-semibold text-slate-500">Middelgrote muren</div>
-                <div class="mt-2 text-2xl font-black text-slate-900">vanaf €59/m²</div>
-                <p class="mt-2 text-sm text-slate-600">
-                  Voor slaapkamers, bureaus, accentmuren en branding.
-                </p>
-              </div>
+                <div class="text-sm font-semibold text-slate-500">
+                  Grote projecten
+                </div>
 
-              <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <div class="text-sm font-semibold text-slate-500">Grotere projecten</div>
-                <div class="mt-2 text-2xl font-black text-slate-900">op maat</div>
-                <p class="mt-2 text-sm text-slate-600">
-                  Voor winkels, horeca, kantoren en grotere oppervlaktes.
+                <div class="mt-2 text-2xl font-black text-slate-900">
+                  vanaf €110/m²
+                </div>
+
+                <p class="mt-2 text-sm leading-6 text-slate-600">
+                  Voor winkels, horeca, kantoren en grotere oppervlaktes vanaf ongeveer 5 m².
                 </p>
               </div>
+            </div>
+
+            <div class="mt-5 rounded-xl border border-slate-200 bg-white p-4">
+              <p class="text-sm leading-6 text-slate-600">
+                De uiteindelijke prijs kan variëren door verplaatsing, hoogtewerk, moeilijk bereikbare muren,
+                voorbereidende werken en eventuele grafische opmaak of vectorisatie.
+              </p>
             </div>
           </div>
         </div>
